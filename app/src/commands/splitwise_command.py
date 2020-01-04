@@ -12,8 +12,7 @@ from app.src.commands.common import CommandException
 logger = logging.getLogger('default')
 
 help_message = """```
-Creates an expense on splitwise for the specified amount between the two
-parties.
+Creates an expense on splitwise for the specified amount between the two parties.
 
 Usage: 
 > .sw <amount> <direction> <user> <description...>

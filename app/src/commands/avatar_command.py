@@ -9,8 +9,7 @@ from slack import WebClient
 logger = logging.getLogger('default')
 
 help_message = """```
-Posts a full size image of a users avatar. This uses a fuzzy search
-so you can @ the user, type their name, or type their nickname.
+Posts a full size image of a users avatar. This uses a fuzzy search so you can @ the user, type their name, or type their nickname.
 
 Usage: 
 > .avatar <user query>
