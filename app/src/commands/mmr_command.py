@@ -1,7 +1,8 @@
 import logging
 
 import requests
-from slack import WebClient
+
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -32,14 +33,11 @@ class MmrCommand:
             await message.channel.send(''.join(chunk))
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict, query: str, filters: str):
+    def handle_slack(client: SlackClient, event: dict, query: str, filters: str):
         logger.info(f"[query={query}] [filters={filters}]")
         lines = mmr(query, filters.split(), slack_server_mapping, slack_race_mapping)
         for chunk in chunker(lines, 25):
-            client.chat_postMessage(
-                text=''.join(chunk),
-                channel=event['channel']
-            )
+            client.post_message(event, ''.join(chunk))
 
 
 discord_server_mapping = {

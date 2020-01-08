@@ -3,7 +3,8 @@ import re
 
 import requests
 from discord import Message, Forbidden, HTTPException
-from slack import WebClient
+
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -44,5 +45,5 @@ class StealCommand:
         await message.add_reaction('✅')
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict):
+    def handle_slack(client: SlackClient, event: dict):
         logger.info("")

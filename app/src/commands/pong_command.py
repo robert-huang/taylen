@@ -1,6 +1,6 @@
 import logging
 
-from slack import WebClient
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -19,9 +19,6 @@ class PongCommand:
         await message.channel.send('ping')
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict):
+    def handle_slack(client: SlackClient, event: dict):
         logger.info("")
-        client.chat_postMessage(
-            text='ping',
-            channel=event['channel']
-        )
+        client.post_message(event, 'ping')

@@ -48,8 +48,4 @@ def handle_slack(event):
         slack_cmd_map[parsed[0]].handle_slack(client, event, *parsed[1:])
     except ParseException:
         if re.match(r'\.[a-zA-Z]+( .*)?', text):
-            client.reactions_add(
-                name='confused-lump',
-                channel=event['channel'],
-                timestamp=event['ts']
-            )
+            client.react(event, 'confused-lump')

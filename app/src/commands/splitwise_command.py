@@ -1,13 +1,13 @@
 import logging
 
 from django.conf import settings
-from slack import WebClient
 from splitwise import Splitwise
 from splitwise.expense import Expense
 from splitwise.user import ExpenseUser
 
 from app.models import User
 from app.src.commands.common import CommandException
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -35,7 +35,7 @@ class SplitwiseCommand:
         logger.info("")
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict, amount: float, direction: str, recipient: str, description: str):
+    def handle_slack(client: SlackClient, event: dict, amount: float, direction: str, recipient: str, description: str):
         logger.info(f"[recipient={recipient}] [direction={direction}] [amount={amount}] [description={description}]")
 
         try:
@@ -46,17 +46,9 @@ class SplitwiseCommand:
             else:
                 raise CommandException('Invalid direction')
 
-            client.reactions_add(
-                name='white_check_mark',
-                channel=event['channel'],
-                timestamp=event['ts']
-            )
+            client.react(event, 'white_check_mark')
         except CommandException:
-            client.reactions_add(
-                name='x',
-                channel=event['channel'],
-                timestamp=event['ts']
-            )
+            client.react(event, 'x')
 
 
 sObj = Splitwise(settings.SPLITWISE_CONSUMER_KEY, settings.SPLITWISE_CONSUMER_SECRET)

@@ -1,8 +1,7 @@
 import logging
 
-from slack import WebClient
-
 from app.src.commands import ping_command, pong_command, splitwise_command, steal_command, avatar_command, mmr_command
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -48,10 +47,7 @@ class HelpCommand:
         await message.channel.send(text)
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict, command: str = None):
+    def handle_slack(client: SlackClient, event: dict, command: str = None):
         logger.info(f"[command={command}]")
         text = help_messages.get(command, slack_help_message)
-        client.chat_postMessage(
-            text=text,
-            channel=event['channel']
-        )
+        client.post_message(event, text)

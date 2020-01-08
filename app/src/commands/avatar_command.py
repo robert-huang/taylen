@@ -4,7 +4,8 @@ import logging
 import re
 
 from discord import Message
-from slack import WebClient
+
+from app.src.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 
@@ -36,5 +37,5 @@ class AvatarCommand:
         await message.channel.send(guild_members[i // 3].avatar_url_as(static_format='png'))
 
     @staticmethod
-    def handle_slack(client: WebClient, event: dict):
+    def handle_slack(client: SlackClient, event: dict):
         logger.info("")
