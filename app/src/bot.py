@@ -40,8 +40,14 @@ async def handle_discord(message: Message):
 
 
 def handle_slack(event):
+    text: str = event['text']
     try:
-        parsed = slack_grammar.grammar.parseString(event['text'], True)
+        parsed = slack_grammar.grammar.parseString(text, True)
         slack_cmd_map[parsed[0]].handle_slack(client, event, *parsed[1:])
     except ParseException:
-        pass
+        if text.startswith('.') and not text.startswith('..'):
+            client.reactions_add(
+                name='confused_lump',
+                channel=event['channel'],
+                timestamp=event['ts']
+            )
