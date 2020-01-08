@@ -47,7 +47,7 @@ def handle_slack(event):
     except ParseException:
         if text.startswith('.') and not text.startswith('..'):
             client.reactions_add(
-                name='confused_lump',
+                name='confused-lump',
                 channel=event['channel'],
                 timestamp=event['ts']
             )
