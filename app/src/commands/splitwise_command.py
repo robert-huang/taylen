@@ -25,7 +25,7 @@ Arguments:
 
 Examples:
 > .sw $4.20 to @tso for pizza
-> .sw $69 from @tso for using these meme numbers in their help messages
+> .sw $69 from @tso chicken
 ```"""
 
 
