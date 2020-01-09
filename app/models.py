@@ -16,7 +16,7 @@ class User(models.Model):
 
 class Emoji(models.Model):
     id: uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name: str = models.CharField(max_length=30, unique=True)
+    name: str = models.CharField(max_length=100, unique=True)
 
     created_at: datetime = models.DateTimeField(auto_now_add=True)
     modified_at: datetime = models.DateTimeField(auto_now=True)
