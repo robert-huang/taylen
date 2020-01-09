@@ -19,7 +19,7 @@ class Command(BaseCommand):
         shuffle(emojis_fighting)
 
         for first, second in chunker(emojis_fighting, 2):
-            response = client.chat_postMessage(channel='#emoji-fight', text=f'Fight: :{first.name}: vs :{second.name}:')
+            response = client.chat_postMessage(channel='#emoji-fight', text=f':{first.name}: vs :{second.name}:')
             match = EmojiMatch(first=first, second=second, slack_ts=response['ts'], slack_channel=response['channel'])
             client.react(response, first.name)
             client.react(response, second.name)
