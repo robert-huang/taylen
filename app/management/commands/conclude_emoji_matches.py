@@ -14,7 +14,12 @@ class Command(BaseCommand):
             for reaction in reactions:
                 reaction_to_count[reaction['name']] = reaction['count']
 
-            if reaction_to_count[match.first.name] > reaction_to_count[match.second.name]:
+            first_votes = reaction_to_count[match.first.name]
+            second_votes = reaction_to_count[match.second.name]
+            match.first_votes = first_votes
+            match.second_votes = second_votes
+
+            if first_votes > second_votes:
                 match.winner = match.first
                 match.loser = match.second
             else:

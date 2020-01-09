@@ -29,7 +29,11 @@ class EmojiMatch(models.Model):
     id: uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     first: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='first_emojis')
+    first_votes: int = models.IntegerField(null=True, blank=True)
+
     second: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='second_emojis')
+    second_votes: int = models.IntegerField(null=True, blank=True)
+
     winner: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='winning_matches', null=True,
                                       blank=True)
     loser: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='losing_matches', null=True,
