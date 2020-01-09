@@ -3,6 +3,7 @@ import logging
 import requests
 
 from app.src.slack.slack_client import SlackClient
+from app.src.util.chunker import chunker
 
 logger = logging.getLogger('default')
 
@@ -120,7 +121,3 @@ def sc2ladder_query(url, race, server, limit, server_mapping, race_mapping):
         clan = '' if not player['clan'] else f"[{player['clan']}]"
         content += f"\n{server} {race} {clan} {name}: {player['mmr']}"
     return content
-
-
-def chunker(seq, size):
-    return (seq[pos:pos + size] for pos in range(0, len(seq), size))
