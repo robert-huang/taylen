@@ -10,5 +10,7 @@ class Command(BaseCommand):
         for emoji in emojis:
             if 'alias:' in emojis[emoji]:
                 continue
-            e = Emoji(name=emoji)
-            e.save()
+
+            if Emoji.objects.filter(name=emoji).count() == 0:
+                e = Emoji(name=emoji)
+                e.save()
