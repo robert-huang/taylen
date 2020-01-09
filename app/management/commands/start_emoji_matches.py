@@ -11,7 +11,7 @@ from app.src.util.chunker import chunker
 class Command(BaseCommand):
     def handle(self, *args, **options):
         emojis: Dict[str, int] = {}
-        for emoji in Emoji.objects.all():
+        for emoji in Emoji.objects.order_by('?').all():
             if emoji.losing_matches.count() > 0:
                 continue
             emojis[emoji] = emoji.winning_matches.count()
