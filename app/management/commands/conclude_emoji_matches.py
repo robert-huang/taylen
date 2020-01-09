@@ -7,7 +7,8 @@ from app.src.slack.slack_client import client
 class Command(BaseCommand):
     def handle(self, *args, **options):
         winning_emojis = []
-        for match in EmojiMatch.objects.filter(winner=None).all():
+        ties = []
+        for match in EmojiMatch.objects.filter(winner=None, tied=False).all():
             reactions = client.reactions_get(channel=match.slack_channel, timestamp=match.slack_ts)['message'][
                 'reactions']
             reaction_to_count = {}
@@ -20,13 +21,17 @@ class Command(BaseCommand):
             match.second_votes = second_votes
 
             if first_votes > second_votes:
+                winning_emojis.append(match.first)
                 match.winner = match.first
                 match.loser = match.second
-            else:
+            elif first_votes < second_votes:
+                winning_emojis.append(match.second)
                 match.winner = match.second
                 match.loser = match.first
+            else:
+                match.tied = True
+                ties.append(match)
 
-            winning_emojis.append(match.winner.name)
             match.save()
 
         text = 'Winners: '

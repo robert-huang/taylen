@@ -39,6 +39,8 @@ class EmojiMatch(models.Model):
     loser: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='losing_matches', null=True,
                                      blank=True)
 
+    tied: bool = models.BooleanField(default=False)
+
     slack_channel: str = models.CharField(max_length=30)
     slack_ts: str = models.CharField(max_length=30)
 
