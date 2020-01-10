@@ -38,15 +38,15 @@ class Command(BaseCommand):
 
             match.save()
 
-        text = 'Winners: '
+        text = '`Won:` '
         for emoji in winning_emojis:
             text += f':{emoji.name}: '
 
-        text += '\nLosers: '
+        text += '\n`Ded:` '
         for emoji in losing_emojis:
             text += f':{emoji.name}: '
 
-        text += '\nTies: '
+        text += '\n`Tie:` '
         for emoji in ties:
             text += f':{emoji.name}: '
 
