@@ -23,6 +23,6 @@ class Command(BaseCommand):
             response = client.chat_postMessage(channel='#emoji-fight', text=f':{first.name}: vs :{second.name}:')
             match = EmojiMatch(first=first, second=second, slack_ts=response['ts'], slack_channel=response['channel'])
             client.react(response, first.name)
-            time.sleep(0.25)
+            time.sleep(0.50)
             client.react(response, second.name)
             match.save()
