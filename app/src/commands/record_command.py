@@ -8,7 +8,7 @@ from app.src.slack.slack_client import SlackClient
 logger = logging.getLogger('default')
 
 help_message = """```
-The bot will respond with the given emoji's record
+The bot will respond with the given emoji's record in the form {wins} - {ties} - {losses}.
 
 Usage: 
 > .record <emoji>
