@@ -33,7 +33,7 @@ _Emoji = Combine(
 _Money = Regex(r'[0-9$\.]+').setParseAction(lambda s, loc, toks: Price.fromstring(toks[0]).amount_float)
 _RestOfInput = Regex(r'.*')
 _Direction = Literal('to') | Literal('from')
-_Commands = Literal('help') | Literal('ping') | Literal('pong') | Literal('sw') | Literal('mmr')
+_Commands = Literal('help') | Literal('ping') | Literal('pong') | Literal('sw') | Literal('mmr') | Literal('record')
 
 _help = Literal('.help')
 _help_advanced = Literal('.help') + Optional('.').suppress() + _Commands
