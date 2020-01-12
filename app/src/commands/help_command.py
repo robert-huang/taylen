@@ -14,6 +14,7 @@ Commands:
 - .pong
 - .sw <amount> <direction> <user> <description...> 
 - .mmr <query> <filters...>
+- .record <emoji>
 ```"""
 
 discord_help_message = """```

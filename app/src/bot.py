@@ -8,6 +8,7 @@ from app.src.commands.help_command import HelpCommand
 from app.src.commands.mmr_command import MmrCommand
 from app.src.commands.ping_command import PingCommand
 from app.src.commands.pong_command import PongCommand
+from app.src.commands.record_command import RecordCommand
 from app.src.commands.splitwise_command import SplitwiseCommand
 from app.src.commands.steal_command import StealCommand
 from app.src.discord import discord_grammar
@@ -30,6 +31,7 @@ discord_cmd_map = {
 slack_cmd_map = {
     **shared_cmd_map,
     '.sw': SplitwiseCommand(),
+    '.record': RecordCommand()
 }
 
 

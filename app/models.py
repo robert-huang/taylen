@@ -54,4 +54,4 @@ class EmojiMatch(models.Model):
     modified_at: datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f":{self.first}: vs :{self.second}:"
+        return f"{self.first} vs {self.second}"

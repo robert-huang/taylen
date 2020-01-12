@@ -23,6 +23,13 @@ _Email = Combine(
     Word(printables.replace('>', '')).suppress() +
     Suppress('>')
 )
+# :simple_smile:
+_Emoji = Combine(
+    Suppress(':') +
+    Word(printables.replace(':', '')) +
+    Suppress(':')
+)
+
 _Money = Regex(r'[0-9$\.]+').setParseAction(lambda s, loc, toks: Price.fromstring(toks[0]).amount_float)
 _RestOfInput = Regex(r'.*')
 _Direction = Literal('to') | Literal('from')
@@ -34,10 +41,12 @@ _ping = Literal('.ping')
 _pong = Literal('.pong')
 _splitwise = Literal('.sw') + _Money + _Direction + _User + _RestOfInput
 _mmr = Literal('.mmr') + _String + _RestOfInput
+_record = Literal('.record') + _Emoji
 
 grammar = _help_advanced \
           | _help \
           | _ping \
           | _pong \
           | _splitwise \
-          | _mmr
+          | _mmr \
+          | _record
