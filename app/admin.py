@@ -5,12 +5,12 @@ from app.models import User, Emoji, EmojiMatch
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('friendly_name', 'slack_id', 'splitwise_id')
+    list_display = ('__str__', 'slack_id', 'splitwise_id')
 
 
 @admin.register(Emoji)
 class EmojiAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('__str__', 'record')
 
 
 @admin.register(EmojiMatch)

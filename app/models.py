@@ -21,8 +21,14 @@ class Emoji(models.Model):
     created_at: datetime = models.DateTimeField(auto_now_add=True)
     modified_at: datetime = models.DateTimeField(auto_now=True)
 
+    def record(self):
+        wins = self.winning_matches.count()
+        losses = self.losing_matches.count()
+        ties = self.first_emojis.filter(tied=True).count() + self.second_emojis.filter(tied=True).count()
+        return f'{wins} - {ties} - {losses}'
+
     def __str__(self):
-        return self.name
+        return f':{self.name}:'
 
 
 class EmojiMatch(models.Model):
@@ -48,4 +54,4 @@ class EmojiMatch(models.Model):
     modified_at: datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.first} vs {self.second}"
+        return f":{self.first}: vs :{self.second}:"
