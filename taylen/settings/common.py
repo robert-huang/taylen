@@ -6,6 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
+    'suit',
     'app',
     'django.contrib.admin',
     'django.contrib.auth',
