@@ -21,6 +21,8 @@ CONSTANCE_CONFIG = {
     'EMOJIS_BRACKET_NUMBER_OF_MATCHES': (10, 'Number of matches added in start_emoji_matches'),
 }
 
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
