@@ -4,7 +4,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 INSTALLED_APPS = [
+    'constance',
     'app',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -12,6 +14,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CONSTANCE_CONFIG = {
+    'EMOJIS_BRACKET_TIME_BETWEEN_REACTIONS': (0.5, 'Time in seconds to sleep between adding reactions'),
+    'EMOJIS_BRACKET_NUMBER_OF_MATCHES': (10, 'Number of matches added in start_emoji_matches'),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
