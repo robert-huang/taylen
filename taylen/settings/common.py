@@ -7,7 +7,6 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
     'app',
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

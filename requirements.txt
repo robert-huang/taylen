@@ -47,8 +47,6 @@ django==3.0.1 \
 django-constance==2.5.0 \
     --hash=sha256:c47db4abd5788584115db681c0e8fef8ff870d49af90aa359076f0833a537199 \
     --hash=sha256:1b536d153c168ef548fea5bdcdea84afab83892e2163ec4e896557a3139effd7
-django-grappelli==2.13.3 \
-    --hash=sha256:cf0d1289608cd74dd603bba840dcf120bbbd47c1da9939079e3daade1d8c33d8
 django-heroku==0.3.1 \
     --hash=sha256:6af4bc3ae4a9b55eaad6dbe5164918982d2762661aebc9f83d9fa49f6009514e \
     --hash=sha256:2bc690aab89eedbe01311752320a9a12e7548e3b0ed102681acc5736a41a4762

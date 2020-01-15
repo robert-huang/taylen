@@ -127,14 +127,6 @@ redis = ["redis"]
 
 [[package]]
 category = "main"
-description = "A jazzy skin for the Django Admin-Interface."
-name = "django-grappelli"
-optional = false
-python-versions = "*"
-version = "2.13.3"
-
-[[package]]
-category = "main"
 description = "This is a Django library for Heroku apps."
 name = "django-heroku"
 optional = false
@@ -383,7 +375,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "6f71ac1c380800f579f80a54294992b8e29cc350bccb1a0653851312b2586256"
+content-hash = "d649d7a9f21ffbbd137fb1578ed1f71f973f154d1b9f6b6307f51a7e2057c34e"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -445,9 +437,6 @@ django = [
 django-constance = [
     {file = "django-constance-2.5.0.tar.gz", hash = "sha256:c47db4abd5788584115db681c0e8fef8ff870d49af90aa359076f0833a537199"},
     {file = "django_constance-2.5.0-py2.py3-none-any.whl", hash = "sha256:1b536d153c168ef548fea5bdcdea84afab83892e2163ec4e896557a3139effd7"},
-]
-django-grappelli = [
-    {file = "django-grappelli-2.13.3.tar.gz", hash = "sha256:cf0d1289608cd74dd603bba840dcf120bbbd47c1da9939079e3daade1d8c33d8"},
 ]
 django-heroku = [
     {file = "django-heroku-0.3.1.tar.gz", hash = "sha256:6af4bc3ae4a9b55eaad6dbe5164918982d2762661aebc9f83d9fa49f6009514e"},
