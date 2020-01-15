@@ -30,8 +30,7 @@ price-parser = "^0.3.1"
 "discord.py" = "^1.2.5"
 django-redis-cache = "^2.1.0"
 requests = "^2.22.0"
-django-constance = {extras = ["database"], version = "^2.5.0"}
-django-suit = "^0.2.28"
+django-constance = {extras = ["database"], git = "git@github.com:jazzband/django-constance.git", branch="master" }
 
 [tool.poetry.dev-dependencies]
 

@@ -95,7 +95,7 @@ description = "A high-level Python Web framework that encourages rapid developme
 name = "django"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.1"
+version = "3.0.2"
 
 [package.dependencies]
 asgiref = ">=3.2,<4.0"
@@ -115,8 +115,6 @@ python-versions = "*"
 version = "2.5.0"
 
 [package.dependencies]
-six = "*"
-
 [package.dependencies.django-picklefield]
 optional = true
 version = "*"
@@ -125,6 +123,10 @@ version = "*"
 database = ["django-picklefield"]
 redis = ["redis"]
 
+[package.source]
+reference = "b62206da573c1447b79ebc95a430df809672092d"
+type = "git"
+url = "git@github.com:jazzband/django-constance.git"
 [[package]]
 category = "main"
 description = "This is a Django library for Heroku apps."
@@ -167,14 +169,6 @@ six = "*"
 
 [[package]]
 category = "main"
-description = "Modern theme for Django admin interface."
-name = "django-suit"
-optional = false
-python-versions = "*"
-version = "0.2.28"
-
-[[package]]
-category = "main"
 description = "WSGI HTTP Server for UNIX"
 name = "gunicorn"
 optional = false
@@ -212,7 +206,7 @@ description = "multidict implementation"
 name = "multidict"
 optional = false
 python-versions = ">=3.5"
-version = "4.7.2"
+version = "4.7.4"
 
 [[package]]
 category = "main"
@@ -383,7 +377,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "5d086ba2254736719e509cffbafd28b9f85f63715a72fc8e75c709f5e431d3ee"
+content-hash = "ab3a317c3a8a3eba19c964b023bc76bf83dc7a28f00403bd951afa0959708444"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -439,13 +433,10 @@ dj-database-url = [
     {file = "dj_database_url-0.5.0-py2.py3-none-any.whl", hash = "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"},
 ]
 django = [
-    {file = "Django-3.0.1-py3-none-any.whl", hash = "sha256:b61295749be7e1c42467c55bcabdaee9fbe9496fdf9ed2e22cef44d9de2ff953"},
-    {file = "Django-3.0.1.tar.gz", hash = "sha256:315b11ea265dd15348d47f2cbb044ef71da2018f6e582fed875c889758e6f844"},
+    {file = "Django-3.0.2-py3-none-any.whl", hash = "sha256:4f2c913303be4f874015993420bf0bd8fd2097a9c88e6b49c6a92f9bdd3fb13a"},
+    {file = "Django-3.0.2.tar.gz", hash = "sha256:8c3575f81e11390893860d97e1e0154c47512f180ea55bd84ce8fa69ba8051ca"},
 ]
-django-constance = [
-    {file = "django-constance-2.5.0.tar.gz", hash = "sha256:c47db4abd5788584115db681c0e8fef8ff870d49af90aa359076f0833a537199"},
-    {file = "django_constance-2.5.0-py2.py3-none-any.whl", hash = "sha256:1b536d153c168ef548fea5bdcdea84afab83892e2163ec4e896557a3139effd7"},
-]
+django-constance = []
 django-heroku = [
     {file = "django-heroku-0.3.1.tar.gz", hash = "sha256:6af4bc3ae4a9b55eaad6dbe5164918982d2762661aebc9f83d9fa49f6009514e"},
     {file = "django_heroku-0.3.1-py2.py3-none-any.whl", hash = "sha256:2bc690aab89eedbe01311752320a9a12e7548e3b0ed102681acc5736a41a4762"},
@@ -457,10 +448,6 @@ django-picklefield = [
 django-redis-cache = [
     {file = "django-redis-cache-2.1.0.tar.gz", hash = "sha256:5c581743de5994e6b15abfd5b3dbcb8bf00e42d97658c96b7218bcb6a63f863b"},
     {file = "django_redis_cache-2.1.0-py3-none-any.whl", hash = "sha256:bc0eaf20d275708e0437cbea28f9965e1922c15291f6206edbef3966c029836b"},
-]
-django-suit = [
-    {file = "django-suit-0.2.28.tar.gz", hash = "sha256:bacd8a079fcc08deb6efd0d7f60241e3c319526939ae1abe8ccfbc1b03e97104"},
-    {file = "django_suit-0.2.28-py2.py3-none-any.whl", hash = "sha256:256412597ac8e9461780542eebb12b37f65ff702bf23de23d07d245510c64ff2"},
 ]
 gunicorn = [
     {file = "gunicorn-20.0.4-py2.py3-none-any.whl", hash = "sha256:cd4a810dd51bf497552cf3f863b575dabd73d6ad6a91075b65936b151cbf4f9c"},
@@ -475,23 +462,23 @@ idna = [
     {file = "idna-2.8.tar.gz", hash = "sha256:c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407"},
 ]
 multidict = [
-    {file = "multidict-4.7.2-cp35-cp35m-macosx_10_13_x86_64.whl", hash = "sha256:8f30ead697c2e37147d82ba8019952b5ea99bd3d1052f1f1ebff951eaa953209"},
-    {file = "multidict-4.7.2-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:824716bba5a4efd74ddd36a3830efb9e49860149514ef7c41aac0144757ebb5d"},
-    {file = "multidict-4.7.2-cp35-cp35m-win32.whl", hash = "sha256:63d9a3d93a514549760cb68c82864966bddb6ab53a3326931c8db9ad29414603"},
-    {file = "multidict-4.7.2-cp35-cp35m-win_amd64.whl", hash = "sha256:a03efe8b7591c77d9ad4b9d81dcfb9c96e538ae25eb114385f35f4d7ffa3bac2"},
-    {file = "multidict-4.7.2-cp36-cp36m-macosx_10_13_x86_64.whl", hash = "sha256:7dd6f6a51b64d0a6473bc30c53e1d73fcb461c437f43662b7d6d701bd90db253"},
-    {file = "multidict-4.7.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:77264002c184538df5dcb4fc1de5df6803587fa30bbe12203a7a3436b8aafc0f"},
-    {file = "multidict-4.7.2-cp36-cp36m-win32.whl", hash = "sha256:b86e8e33a0a24240b293e7fad233a7e886bae6e51ca6923d39f4e313dd1d5578"},
-    {file = "multidict-4.7.2-cp36-cp36m-win_amd64.whl", hash = "sha256:daf6d89e47418e38af98e1f2beb3fe0c8aa34806f681d04df314c0f131dcf01d"},
-    {file = "multidict-4.7.2-cp37-cp37m-macosx_10_13_x86_64.whl", hash = "sha256:7f4e591ec80619e74c50b7800f9db9b0e01d2099094767050dfe2e78e1c41839"},
-    {file = "multidict-4.7.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:335344a3c3b19845c73a7826f359c51c4a12a1ccd2392b5f572a63b452bfc771"},
-    {file = "multidict-4.7.2-cp37-cp37m-win32.whl", hash = "sha256:615a282acd530a1bc1b01f069a8c5874cb7c2780c287a2895ad5ab7407540e9d"},
-    {file = "multidict-4.7.2-cp37-cp37m-win_amd64.whl", hash = "sha256:20081b14c923d2c5122c13e060d0ee334e078e1802c36006b20c8d7a59ee6a52"},
-    {file = "multidict-4.7.2-cp38-cp38-macosx_10_13_x86_64.whl", hash = "sha256:49e80c53659c7ac50ec1c4b5fa50f045b67fffeb5b735dccb6205e4ff122e8b6"},
-    {file = "multidict-4.7.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:ff53a434890a16356bc45c0b90557efd89d0e5a820dbab37015d7ee630c6707a"},
-    {file = "multidict-4.7.2-cp38-cp38-win32.whl", hash = "sha256:c1c64c93b8754a5cebd495d136f47a5ca93cbfceba532e306a768c27a0c1292b"},
-    {file = "multidict-4.7.2-cp38-cp38-win_amd64.whl", hash = "sha256:e03b7addca96b9eb24d6eabbdc3041e8f71fd47b316e0f3c0fa993fc7b99002c"},
-    {file = "multidict-4.7.2.tar.gz", hash = "sha256:d4dafdcfbf0ac80fc5f00603f0ce43e487c654ae34a656e4749f175d9832b1b5"},
+    {file = "multidict-4.7.4-cp35-cp35m-macosx_10_13_x86_64.whl", hash = "sha256:93166e0f5379cf6cd29746989f8a594fa7204dcae2e9335ddba39c870a287e1c"},
+    {file = "multidict-4.7.4-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:a8ed33e8f9b67e3b592c56567135bb42e7e0e97417a4b6a771e60898dfd5182b"},
+    {file = "multidict-4.7.4-cp35-cp35m-win32.whl", hash = "sha256:a38baa3046cce174a07a59952c9f876ae8875ef3559709639c17fdf21f7b30dd"},
+    {file = "multidict-4.7.4-cp35-cp35m-win_amd64.whl", hash = "sha256:9a7b115ee0b9b92d10ebc246811d8f55d0c57e82dbb6a26b23c9a9a6ad40ce0c"},
+    {file = "multidict-4.7.4-cp36-cp36m-macosx_10_13_x86_64.whl", hash = "sha256:dcfed56aa085b89d644af17442cdc2debaa73388feba4b8026446d168ca8dad7"},
+    {file = "multidict-4.7.4-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:f29b885e4903bd57a7789f09fe9d60b6475a6c1a4c0eca874d8558f00f9d4b51"},
+    {file = "multidict-4.7.4-cp36-cp36m-win32.whl", hash = "sha256:13f3ebdb5693944f52faa7b2065b751cb7e578b8dd0a5bb8e4ab05ad0188b85e"},
+    {file = "multidict-4.7.4-cp36-cp36m-win_amd64.whl", hash = "sha256:4fba5204d32d5c52439f88437d33ad14b5f228e25072a192453f658bddfe45a7"},
+    {file = "multidict-4.7.4-cp37-cp37m-macosx_10_13_x86_64.whl", hash = "sha256:a6d219f49821f4b2c85c6d426346a5d84dab6daa6f85ca3da6c00ed05b54022d"},
+    {file = "multidict-4.7.4-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:63810343ea07f5cd86ba66ab66706243a6f5af075eea50c01e39b4ad6bc3c57a"},
+    {file = "multidict-4.7.4-cp37-cp37m-win32.whl", hash = "sha256:26502cefa86d79b86752e96639352c7247846515c864d7c2eb85d036752b643c"},
+    {file = "multidict-4.7.4-cp37-cp37m-win_amd64.whl", hash = "sha256:5eee66f882ab35674944dfa0d28b57fa51e160b4dce0ce19e47f495fdae70703"},
+    {file = "multidict-4.7.4-cp38-cp38-macosx_10_13_x86_64.whl", hash = "sha256:527124ef435f39a37b279653ad0238ff606b58328ca7989a6df372fd75d7fe26"},
+    {file = "multidict-4.7.4-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:83c6ddf0add57c6b8a7de0bc7e2d656be3eefeff7c922af9a9aae7e49f225625"},
+    {file = "multidict-4.7.4-cp38-cp38-win32.whl", hash = "sha256:6bd10adf9f0d6a98ccc792ab6f83d18674775986ba9bacd376b643fe35633357"},
+    {file = "multidict-4.7.4-cp38-cp38-win_amd64.whl", hash = "sha256:5414f388ffd78c57e77bd253cf829373721f450613de53dc85a08e34d806e8eb"},
+    {file = "multidict-4.7.4.tar.gz", hash = "sha256:d7d428488c67b09b26928950a395e41cc72bb9c3d5abfe9f0521940ee4f796d4"},
 ]
 oauth2 = [
     {file = "oauth2-1.9.0.post1-py2.py3-none-any.whl", hash = "sha256:15b5c42301f46dd63113f1214b0d81a8b16254f65a86d3c32a1b52297f3266e6"},
