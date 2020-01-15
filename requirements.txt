@@ -44,9 +44,17 @@ dj-database-url==0.5.0 \
 django==3.0.1 \
     --hash=sha256:b61295749be7e1c42467c55bcabdaee9fbe9496fdf9ed2e22cef44d9de2ff953 \
     --hash=sha256:315b11ea265dd15348d47f2cbb044ef71da2018f6e582fed875c889758e6f844
+django-constance==2.5.0 \
+    --hash=sha256:c47db4abd5788584115db681c0e8fef8ff870d49af90aa359076f0833a537199 \
+    --hash=sha256:1b536d153c168ef548fea5bdcdea84afab83892e2163ec4e896557a3139effd7
+django-grappelli==2.13.3 \
+    --hash=sha256:cf0d1289608cd74dd603bba840dcf120bbbd47c1da9939079e3daade1d8c33d8
 django-heroku==0.3.1 \
     --hash=sha256:6af4bc3ae4a9b55eaad6dbe5164918982d2762661aebc9f83d9fa49f6009514e \
     --hash=sha256:2bc690aab89eedbe01311752320a9a12e7548e3b0ed102681acc5736a41a4762
+django-picklefield==2.0 \
+    --hash=sha256:f1733a8db1b6046c0d7d738e785f9875aa3c198215de11993463a9339aa4ea24 \
+    --hash=sha256:9052f2dcf4882c683ce87b4356f29b4d014c0dad645b6906baf9f09571f52bc8
 django-redis-cache==2.1.0 \
     --hash=sha256:5c581743de5994e6b15abfd5b3dbcb8bf00e42d97658c96b7218bcb6a63f863b \
     --hash=sha256:bc0eaf20d275708e0437cbea28f9965e1922c15291f6206edbef3966c029836b
