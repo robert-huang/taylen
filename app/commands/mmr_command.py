@@ -3,7 +3,7 @@ import logging
 import requests
 
 from app.slack.slack_client import SlackClient
-from app.util import chunker
+from app.util.chunker import chunker
 
 logger = logging.getLogger('default')
 
