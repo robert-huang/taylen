@@ -9,5 +9,5 @@ class AppConfig(AppConfig):
     def ready(self):
         if 'runserver' in sys.argv or 'taylen.wsgi' in sys.argv:
             # Import locally to avoid cyclical dependency.
-            from app.src.discord import discord_client
+            from app.discord import discord_client
             discord_client.start()
