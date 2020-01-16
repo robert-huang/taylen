@@ -2,8 +2,8 @@ import logging
 
 import requests
 
-from app.src.slack.slack_client import SlackClient
-from app.src.util.chunker import chunker
+from app.slack.slack_client import SlackClient
+from app.util import chunker
 
 logger = logging.getLogger('default')
 

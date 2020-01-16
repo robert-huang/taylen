@@ -7,7 +7,7 @@ from django.core.cache import cache
 from django.http import HttpResponse, HttpRequest, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from app.src.bot import handle_slack
+from app.bot import handle_slack
 
 logger = logging.getLogger('default')
 

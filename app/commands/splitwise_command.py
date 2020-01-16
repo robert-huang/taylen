@@ -6,8 +6,8 @@ from splitwise.expense import Expense
 from splitwise.user import ExpenseUser
 
 from app.models import User
-from app.src.commands.common import CommandException
-from app.src.slack.slack_client import SlackClient
+from app.slack.slack_client import SlackClient
+from .common import CommandException
 
 logger = logging.getLogger('default')
 

@@ -1,6 +1,6 @@
 import logging
 
-from app.src.slack.slack_client import SlackClient
+from app.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 

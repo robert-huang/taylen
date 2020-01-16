@@ -1,8 +1,7 @@
 import logging
 
-from app.src.commands import ping_command, pong_command, splitwise_command, steal_command, avatar_command, mmr_command, \
-    record_command
-from app.src.slack.slack_client import SlackClient
+from app.slack.slack_client import SlackClient
+from . import ping_command, pong_command, splitwise_command, steal_command, avatar_command, mmr_command, record_command
 
 logger = logging.getLogger('default')
 

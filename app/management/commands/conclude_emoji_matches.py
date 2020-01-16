@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
 from app.models import EmojiMatch
-from app.src.slack.slack_client import client
+from app.slack.slack_client import client
 
 
 class Command(BaseCommand):

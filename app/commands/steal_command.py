@@ -4,7 +4,7 @@ import re
 import requests
 from discord import Message, Forbidden, HTTPException
 
-from app.src.slack.slack_client import SlackClient
+from app.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 

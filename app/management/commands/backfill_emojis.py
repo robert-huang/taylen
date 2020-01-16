@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
 from app.models import Emoji
-from app.src.slack.slack_client import client
+from app.slack.slack_client import client
 
 foo = ":+1::ok_hand::cry::stuck_out_tongue::-1::disappointed::100::fire::heart::chart_with_downwards_trend::question::wave::slightly_smiling_face::sunglasses::heart_eyes::yum::tired_face::thinking_face::face_with_rolling_eyes::smirk::triumph::triumph::triumph::weary::zany_face::nerd_face::ghost::alien::heart_eyes_cat::male-police-officer::skin-tone-6::flushed::hankey::middle_finger::clap::eyes::heart::man_in_business_suit_levitating::sweat_drops:"
 bar = ":crab::peach::eggplant::sushi::beers::japan::love_hotel:"

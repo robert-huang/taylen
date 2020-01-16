@@ -7,7 +7,7 @@ import discord
 from discord import Message
 from django.conf import settings
 
-from app.src.bot import handle_discord
+from app.bot import handle_discord
 
 logger = logging.getLogger('default')
 

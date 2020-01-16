@@ -3,17 +3,17 @@ import re
 from discord import Message
 from pyparsing import ParseException
 
-from app.src.commands.avatar_command import AvatarCommand
-from app.src.commands.help_command import HelpCommand
-from app.src.commands.mmr_command import MmrCommand
-from app.src.commands.ping_command import PingCommand
-from app.src.commands.pong_command import PongCommand
-from app.src.commands.record_command import RecordCommand
-from app.src.commands.splitwise_command import SplitwiseCommand
-from app.src.commands.steal_command import StealCommand
-from app.src.discord import discord_grammar
-from app.src.slack import slack_grammar
-from app.src.slack.slack_client import client
+from app.commands.avatar_command import AvatarCommand
+from app.commands.help_command import HelpCommand
+from app.commands.mmr_command import MmrCommand
+from app.commands.ping_command import PingCommand
+from app.commands.pong_command import PongCommand
+from app.commands.record_command import RecordCommand
+from app.commands.splitwise_command import SplitwiseCommand
+from app.commands.steal_command import StealCommand
+from app.discord import discord_grammar
+from app.slack import slack_grammar
+from app.slack.slack_client import client
 
 shared_cmd_map = {
     '.ping': PingCommand(),

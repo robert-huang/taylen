@@ -5,7 +5,7 @@ import re
 
 from discord import Message
 
-from app.src.slack.slack_client import SlackClient
+from app.slack.slack_client import SlackClient
 
 logger = logging.getLogger('default')
 

@@ -6,8 +6,8 @@ from constance import config
 from django.core.management.base import BaseCommand
 
 from app.models import Emoji, EmojiMatch
-from app.src.slack.slack_client import client
-from app.src.util.chunker import chunker
+from app.slack.slack_client import client
+from app.util import chunker
 
 
 class Command(BaseCommand):
