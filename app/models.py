@@ -28,7 +28,7 @@ class Emoji(models.Model):
         return wins, losses, ties
 
     def defeated(self):
-        return [match.loser for match in self.winning_matches.all()]
+        return [str(match.loser) for match in self.winning_matches.all()]
 
     def __str__(self):
         return f':{self.name}:'
