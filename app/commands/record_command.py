@@ -46,10 +46,7 @@ class RecordCommand:
         logger.info(f"[emoji_name={emoji_name}]")
         try:
             emoji = Emoji.objects.get(name=emoji_name)
-            if detail_level == 'full':
-                full_record = f" Defeated: {" ".join(emoji.defeated())}"
-            else:
-                full_record = ""
+            full_record = f' Defeated: {" ".join(emoji.defeated())}' if detail_level == 'full' else ''
             wins, losses, ties = emoji.record()
             client.post_message(event, f"{number_map.get(wins, wins)} {number_map.get(losses, losses)}"
                                        f" {number_map.get(ties, ties)} {full_record}")
