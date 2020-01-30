@@ -6,6 +6,7 @@
     html, body {
       width: 100vw;
       height: 100vh;
+      background-color: #333333;
     }
 
     #network {
@@ -28,8 +29,19 @@
       };
       var options = {
         nodes: {
-          shape: 'dot',
-          size: 16
+          borderWidth: 2,
+          size: 16,
+	        color: {
+            border: '#222222',
+            background: '#666666',
+            highlight: {
+              border: '#333333',
+              background: '#777777'
+            }
+          },
+          font: {
+            color: '#eeeeee'
+          }
         },
         edges: {
           width: 0.15,
@@ -40,7 +52,8 @@
             from: {
               enabled: true
             }
-          }
+          },
+          color: 'lightgray'
         },
         layout: {
           improvedLayout: false

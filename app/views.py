@@ -21,7 +21,13 @@ def ping(request: HttpRequest):
 def emoji_tree(request: HttpRequest):
     # Nodes: {id: 0, "label": "Myriel", "group": 1},
     # Edges: {"from": 1, "to": 0},
-    nodes = [{'id': str(emoji.id), "label": emoji.name, "group": 1} for emoji in Emoji.objects.all()]
+    nodes = [{
+        'id': str(emoji.id),
+        'label': emoji.name,
+        'shape': 'image',
+        'image': emoji.image_url,
+        'group': 1
+    } for emoji in Emoji.objects.all()]
     edges = [{"from": str(match.winner.id), "to": str(match.loser.id)} for match in
              EmojiMatch.objects.exclude(tied=True).exclude(winner=None).exclude(loser=None).all()]
     return render(request, 'emoji_tree.html', {'nodes': nodes, 'edges': edges})
