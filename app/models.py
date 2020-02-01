@@ -1,6 +1,8 @@
 import datetime
 import uuid
+from typing import List
 
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 
@@ -40,9 +42,11 @@ class EmojiMatch(models.Model):
 
     first: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='first_emojis')
     first_votes: int = models.IntegerField(null=True, blank=True)
+    first_voters: List[str] = ArrayField(models.CharField(max_length=20))
 
     second: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='second_emojis')
     second_votes: int = models.IntegerField(null=True, blank=True)
+    second_voters: List[str] = ArrayField(models.CharField(max_length=20))
 
     winner: Emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE, related_name='winning_matches', null=True,
                                       blank=True)
