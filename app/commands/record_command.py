@@ -10,7 +10,7 @@ logger = logging.getLogger('default')
 help_message = """```
 The bot will respond with the given emoji's record in the form {wins} {losses} {ties}.
 
-Usage: 
+Usage:
 > .record <emoji> <detail_level>
 
 Arguments:
@@ -46,7 +46,8 @@ class RecordCommand:
         logger.info(f"[emoji_name={emoji_name}]")
         try:
             emoji = Emoji.objects.get(name=emoji_name)
-            full_record = f' Defeated: {" ".join(emoji.defeated())} Was defeated by: {" ".join(emoji.defeated_by())}' if detail_level == 'full' else ''
+            full_record = f' Defeated: {" ".join(emoji.defeated())}' if detail_level == 'full' else ''
+            full_record += f' Was defeated by: {" ".join(emoji.defeated_by())}' if len(emoji.defeated_by()) > 0 else ''
             wins, losses, ties = emoji.record()
             client.post_message(event, f"{number_map.get(wins, wins)} {number_map.get(losses, losses)}"
                                        f" {number_map.get(ties, ties)} {full_record}")
